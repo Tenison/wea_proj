@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
+	function createUser(name, pass){
+		return {
+			name: name,
+			pass: name
+		}
+	}
+
+	var database = [];
+	this.database.push(createUser("osei", "pass"));
+	this.database.push(createUser("calx", "pass2"));
+	this.database.push(createUser("alex", "pass3"));
+
+	var newsFeed = [{
+		name: 'osei',
+		post: 'the boy is going to school!!!'
+	},{
+		name: 'alex',
+		post: 'haha Osei!!!'
+	}]
+
+	var user = prompt("Enter User Name:");
+	var pass = prompt("Enter Password");
+
+	for (var i = database.length - 1; i >= 0; i--) {
+		
+		if (database[i].name === user && database[i].pass === user) {
+			window.speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome,' +user+ ', we have missed you'));
+			break;
+		}
+	}
+</script></body></html>
