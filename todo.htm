@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h3> Awesome Todo List</h3>
+<span>Add your Items to the list</span>
+<br>
+<br>
+
+
+<input type="text" name="input" id="add">
+<button id="ok" >ok</button>
+
+
+<ul id="list">
+	<li>start</li>
+
+</ul>
+<script type="text/javascript">
+	var list = document.getElementById("list");
+	var text = document.getElementById("add");
+	var btn_ok = document.getElementById("ok");
+
+	function createText(){
+		var li = document.createElement("li");
+		li.appendChild(document.createTextNode(text.value));
+		list.appendChild(li);
+		text.value = "";		
+	}
+
+	function mouseClickOk(){
+		if(text.value !== ""){
+			createText();
+		}
+	}
+
+	function keyBEnter(event){
+		if(event.which === 13 && text.value !== ""){
+			createText();
+		}
+	}
+
+	btn_ok.addEventListener("click", mouseClickOk);
+	document.addEventListener("keypress", keyBEnter);	
+</script>
+</body>
+</html>
