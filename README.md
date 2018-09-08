@@ -1,2 +1,2 @@
 # fb_project
-#simple js project
+#simple js projects
